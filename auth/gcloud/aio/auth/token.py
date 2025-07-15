@@ -554,7 +554,7 @@ class Token(BaseToken):
 
         # Add scopes if configured
         if hasattr(self, 'scopes') and self.scopes:
-            data['scope'] = ' '.join(self.scopes)
+            data['scope'] = self.scopes
 
         resp = await self.session.post(
             self.service_data['token_url'],
